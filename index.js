@@ -23,8 +23,14 @@ app.use('/admin/', adminRouter)
 // app.use('/ingredients/', ingredientsRouter)
 // app.use('/receipes/', receipesRouter)
 
-app.get('/hello-docker/', (req, res) => res.json({ msg: 'Hello from Docker!' }))
+app.get('/hello-docker/', (req, res) => {
+  console.log('index.js > New request at', new Date().toISOString())
+  return res.json({ msg: 'Hello from Docker!' })
+})
 
 app.listen(PORT, () =>
-  console.log(`Application lancée sur le port ${PORT} !!!`)
+  console.log(
+    new Date().toISOString(),
+    `Application lancée sur le port ${PORT} !!!`
+  )
 )
