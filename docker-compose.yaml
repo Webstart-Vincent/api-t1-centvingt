@@ -1,0 +1,11 @@
+version: '3.8'
+
+name: dv22caronnet_apit1
+
+services:
+  cron-jobs:
+    container_name: dv22caronnet_apit1
+    ports:
+      - '3000:3000'
+    restart: unless-stopped
+    command: start
